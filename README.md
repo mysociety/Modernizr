@@ -21,6 +21,10 @@ Modernizr tests which native CSS3 and HTML5 features are available in the curren
 
 - Dropped Node 8 Support, please upgrade to Node v10
 
+- These tests were moved:
+
+    - `cookies`, `indexeddb`, `indexeddbblock`, `quota-management-api`, `userdata` moved into the storage subdirectory
+     
 - These tests got removed:
 
     - `touchevents`: [discussion](https://github.com/Modernizr/Modernizr/pull/2432) 
