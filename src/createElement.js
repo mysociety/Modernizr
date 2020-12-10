@@ -17,7 +17,7 @@ define(['isSVG'], function(isSVG) {
     } else if (isSVG) {
       return document.createElementNS.call(document, 'http://www.w3.org/2000/svg', arguments[0]);
     } else {
-      return document.createElement.apply(document, arguments);
+      return document.createElement(arguments[0]);
     }
   }
 

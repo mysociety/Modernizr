@@ -15,24 +15,12 @@ define(function() {
     var result;
 
     if ('getComputedStyle' in window) {
-      result = getComputedStyle.call(window, elem, pseudo);
-      var console = window.console;
-
-      if (result !== null) {
-        if (prop) {
-          result = result.getPropertyValue(prop);
-        }
-      } else {
-        if (console) {
-          var method = console.error ? 'error' : 'log';
-          console[method].call(console, 'getComputedStyle returning null, its possible modernizr test results are inaccurate');
-        }
-      }
+      result = getComputedStyle(elem);
     } else {
-      result = !pseudo && elem.currentStyle && elem.currentStyle[prop];
+      result = elem.currentStyle;
     }
 
-    return result;
+    return result[prop];
   }
 
   return computedStyle;
